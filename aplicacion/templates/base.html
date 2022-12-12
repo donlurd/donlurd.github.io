@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Caracoles Web</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome-free/css/all.min.css' %}" />
+	<!-- Bootstrap 4 CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'bs4/bootstrap.min.css' %}" />
+	<!-- Main Jquery -->
+	<script type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
+	<!-- Bootstrap 4 JS -->
+	<script type="text/javascript" src="{% static 'bs4/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+		<div class="container">
+		  <a class="navbar-brand" href="/">Caracol Web</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex" role="search" action="/search">
+          <div class="input-group">
+            <input name="q" type="text" class="form-control" placeholder="Buscar Tienda" />
+            <button class="btn btn-dark" type="sumbit" id="button-addon2">Buscar</button>
+          </div>
+        </form>
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item">
+		        <a class="nav-link text-white" href="/">Inicio</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-white" href="{% url 'categoria_list' %}">Categorias</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-white" href="{% url 'marca_list' %}">Marca</a>
+		      </li>
+          <!--
+		      <li class="nav-item">
+		        <a class="nav-link text-white" href="/cart.php"><i class="fa fa-shopping-cart"></i> Carro </a>
+		      </li>-->
+		      <li class="nav-item">
+		        <a class="nav-link text-white" href="/account.php"><i class="fa fa-user"></i> Mi Cuenta </a>
+		      </li>
+		    </ul>
+		  </div>
+		</div>
+	</nav>
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top container">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="#">Tiendas</a>
+            <small class="d-block mb-3 text-muted">&copy; 2022</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Caracteristicas</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cosas genial</a></li>
+              <li><a class="text-muted" href="#">Caracteristicas random</a></li>
+              <li><a class="text-muted" href="#">Ultima actualizacion</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Recursos</a></li>
+              <li><a class="text-muted" href="#">Nombre recursos</a></li>
+              <li><a class="text-muted" href="#">Otros recursos</a></li>
+              <li><a class="text-muted" href="#">Recursos final</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Nosotros</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Equipo</a></li>
+              <li><a class="text-muted" href="#">Localizacion</a></li>
+              <li><a class="text-muted" href="#">Privacidad</a></li>
+              <li><a class="text-muted" href="#">Terminos</a></li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
